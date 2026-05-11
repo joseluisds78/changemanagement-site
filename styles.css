@@ -703,6 +703,15 @@ p {
     color: rgba(255, 255, 255, 0.7);
 }
 
+.footer a {
+    color: white;
+    text-decoration: underline;
+}
+
+.footer a:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     h1 {
