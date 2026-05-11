@@ -121,6 +121,18 @@ p {
     padding: 1rem 20px;
 }
 
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.nav-logo {
+    height: 36px;
+    width: auto;
+    filter: invert(22%) sepia(90%) saturate(1200%) hue-rotate(210deg) brightness(85%);
+}
+
 .nav-brand h2 {
     margin: 0;
     color: var(--primary);
