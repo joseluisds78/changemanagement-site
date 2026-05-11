@@ -679,11 +679,14 @@ p {
     max-width: 620px;
     margin-left: auto;
     margin-right: auto;
+    padding: 2rem;
+    background: linear-gradient(135deg, #0f766e 0%, #1e40af 100%);
+    border-radius: 8px;
 }
 
 .contact-calendly p {
-    color: #718096;
-    margin-bottom: 0.75rem;
+    color: white;
+    margin-bottom: 1.5rem;
 }
 
 /* Footer */
