@@ -47,7 +47,7 @@ function loadBlogPosts() {
     blogGrid.innerHTML = '';
 
     // Create blog cards
-    blogPosts.forEach(post => {
+    blogPosts.slice(0, -1).forEach(post => {
         const card = createBlogCard(post);
         blogGrid.appendChild(card);
     });
