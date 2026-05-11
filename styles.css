@@ -341,6 +341,12 @@ p {
     color: var(--text-light);
     margin-bottom: 1.5rem;
     font-style: italic;
+    font-size: 0.9rem;
+    min-height: 4.2em;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .service-includes,
