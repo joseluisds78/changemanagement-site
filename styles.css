@@ -324,14 +324,15 @@ p {
 }
 
 .service-price {
-    font-size: 2rem;
+    font-size: 1.4rem;
     color: var(--primary);
     font-weight: 700;
     margin-bottom: 0.5rem;
+    white-space: nowrap;
 }
 
 .service-price span {
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: var(--text-light);
     font-weight: 400;
 }
