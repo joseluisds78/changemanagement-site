@@ -757,6 +757,9 @@ p {
     margin-bottom: 0.5rem;
 }
 
+.title-red { color: #dc2626; }
+.title-green { color: var(--secondary); }
+
 /* Footer */
 .footer {
     background-color: var(--text);
