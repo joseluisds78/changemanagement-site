@@ -129,8 +129,15 @@ p {
 
 .nav-logo {
     height: 36px;
-    width: auto;
+    width: 36px;
+    background-image: url('../images/logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     filter: invert(22%) sepia(90%) saturate(1200%) hue-rotate(210deg) brightness(85%);
+    pointer-events: none;
+    user-select: none;
+    flex-shrink: 0;
 }
 
 .nav-brand h2 {
