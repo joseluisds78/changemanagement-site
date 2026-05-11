@@ -757,8 +757,8 @@ p {
     margin-bottom: 0.5rem;
 }
 
-.title-red { color: #dc2626; }
-.title-green { color: var(--secondary); }
+.title-red { color: #dc2626 !important; }
+.title-green { color: var(--secondary) !important; }
 
 /* Footer */
 .footer {
