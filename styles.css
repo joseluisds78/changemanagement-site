@@ -301,6 +301,16 @@ p {
     background-color: #eef2ff;
 }
 
+.pricing-info {
+    margin-top: 1.5rem;
+    padding: 1rem 1.5rem;
+    background-color: #f8fafc;
+    border-left: 3px solid var(--primary);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
 .service-card h3 {
     margin-top: 0;
     margin-bottom: 1rem;
