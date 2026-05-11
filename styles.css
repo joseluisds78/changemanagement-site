@@ -429,11 +429,22 @@ p {
 }
 
 .experience-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
     margin-bottom: 1.5rem;
     padding: 1.5rem;
     background-color: white;
     border-left: 4px solid var(--secondary);
     border-radius: 4px;
+}
+
+.org-logo {
+    height: 48px;
+    width: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+    margin-top: 2px;
 }
 
 .experience-list strong {
