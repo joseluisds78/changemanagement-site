@@ -115,8 +115,8 @@ p {
 }
 
 .navbar .container {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     padding: 1rem 20px;
 }
@@ -124,20 +124,7 @@ p {
 .nav-brand {
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 0.75rem;
-}
-
-.nav-left {
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 2rem;
-}
-
-.nav-right {
-    display: flex;
-    justify-content: flex-start;
-    padding-left: 2rem;
 }
 
 .nav-logo {
