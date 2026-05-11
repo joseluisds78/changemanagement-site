@@ -131,7 +131,6 @@ p {
     height: 36px;
     width: auto;
     filter: invert(22%) sepia(90%) saturate(1200%) hue-rotate(210deg) brightness(85%);
-    mix-blend-mode: multiply;
 }
 
 .nav-brand h2 {
