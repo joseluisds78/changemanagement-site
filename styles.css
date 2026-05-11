@@ -284,44 +284,21 @@ p {
 }
 
 .service-card {
-    border: 1px solid var(--border);
+    border: 2px solid var(--primary);
     border-radius: 8px;
     padding: 2rem;
-    background-color: white;
-    transition: all 0.3s ease;
+    background-color: #f0f4ff;
     position: relative;
     display: flex;
     flex-direction: column;
 }
 
-.service-card:hover {
-    box-shadow: var(--shadow-lg);
-    transform: translateY(-5px);
-}
-
 .service-card.primary {
-    border: 2px solid var(--primary);
-    box-shadow: 0 0 0 8px rgba(30, 64, 175, 0.1);
-}
-
-.service-card.primary:hover {
-    box-shadow: 0 0 0 8px rgba(30, 64, 175, 0.15), var(--shadow-lg);
+    background-color: #e8eeff;
 }
 
 .service-card.highlight {
-    background-color: var(--bg-lighter);
-}
-
-.service-badge {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background-color: var(--primary);
-    color: white;
-    padding: 0.4rem 0.8rem;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 600;
+    background-color: #eef2ff;
 }
 
 .service-card h3 {
