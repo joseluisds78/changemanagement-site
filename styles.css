@@ -187,13 +187,15 @@ p {
 }
 
 .hero-stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 3rem;
     margin-top: 3rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+}
+
+.stat {
+    text-align: center;
 }
 
 .stat h3 {
