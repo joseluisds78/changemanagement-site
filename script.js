@@ -35,6 +35,7 @@ const blogPosts = [
 document.addEventListener('DOMContentLoaded', function() {
     loadBlogPosts();
     setupSmoothScroll();
+    setupContactForm();
 });
 
 function loadBlogPosts() {
@@ -156,7 +157,44 @@ document.querySelectorAll('.btn').forEach(btn => {
     });
 });
 
-// Mobile menu toggle (for future enhancement)
-function setupMobileMenu() {
-    // You can add mobile menu functionality here
+function setupContactForm() {
+    const form = document.getElementById('contact-form');
+    const success = document.getElementById('form-success');
+    const textarea = document.getElementById('message');
+    const charCount = document.getElementById('char-count');
+
+    if (textarea) {
+        textarea.addEventListener('input', () => {
+            charCount.textContent = textarea.value.length;
+        });
+    }
+
+    if (!form) return;
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const submitBtn = form.querySelector('button[type="submit"]');
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
+            });
+            if (response.ok) {
+                form.classList.add('hidden');
+                success.classList.remove('hidden');
+            } else {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+                alert('Something went wrong. Please try again.');
+            }
+        } catch {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send Message';
+            alert('Something went wrong. Please try again.');
+        }
+    });
 }

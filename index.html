@@ -321,34 +321,23 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2>Get In Touch</h2>
-            <p class="section-intro">Multiple ways to reach out</p>
-
-            <div class="contact-options">
-                <div class="contact-option">
-                    <h3>Email</h3>
-                    <p><a href="mailto:joseluisds@gmail.com">joseluisds@gmail.com</a></p>
+            <form id="contact-form" class="contact-form" action="https://formspree.io/f/FORM_ID_HERE" method="POST">
+                <div class="form-group">
+                    <label for="company">Company</label>
+                    <input type="text" id="company" name="company" required placeholder="Your company name">
                 </div>
-
-                <div class="contact-option">
-                    <h3>LinkedIn</h3>
-                    <p><a href="https://linkedin.com/in/joseluisds/" target="_blank">linkedin.com/in/joseluisds</a></p>
+                <div class="form-group">
+                    <label for="contact-name">Contact Person</label>
+                    <input type="text" id="contact-name" name="name" required placeholder="Your full name">
                 </div>
-
-                <div class="contact-option">
-                    <h3>Phone</h3>
-                    <p><a href="tel:+32494115505">+32 (494) 11-55-05</a></p>
+                <div class="form-group">
+                    <label for="message">How can I help? <span class="char-counter"><span id="char-count">0</span>/500</span></label>
+                    <textarea id="message" name="message" required maxlength="500" rows="6" placeholder="Describe your change governance challenges..."></textarea>
                 </div>
-
-                <div class="contact-option">
-                    <h3>Location</h3>
-                    <p>Belgium (Remote-First)</p>
-                </div>
-            </div>
-
-            <div class="contact-cta">
-                <p>Ready to discuss your change governance challenges?</p>
-                <a href="https://calendly.com/joseluisds/15min" target="_blank" class="btn btn-primary">Schedule a 15-Min Call</a>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+            <div id="form-success" class="form-success hidden">
+                <p>Thank you for reaching out. I'll be in touch shortly.</p>
             </div>
         </div>
     </section>
