@@ -673,6 +673,19 @@ p {
     display: none;
 }
 
+.contact-calendly {
+    text-align: center;
+    margin-top: 2rem;
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-calendly p {
+    color: #718096;
+    margin-bottom: 0.75rem;
+}
+
 /* Footer */
 .footer {
     background-color: var(--text);
