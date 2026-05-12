@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
     loadBlogPosts();
     setupSmoothScroll();
     setupContactForm();
+    setupPricingModal();
 });
 
 function loadBlogPosts() {
@@ -156,6 +157,78 @@ document.querySelectorAll('.btn').forEach(btn => {
         trackEvent('button_click', { button: buttonText });
     });
 });
+
+function getCookie(name) {
+    const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+    return match ? match[2] : null;
+}
+
+function setCookie(name, value, days) {
+    const expires = new Date(Date.now() + days * 864e5).toUTCString();
+    document.cookie = name + '=' + value + '; expires=' + expires + '; path=/';
+}
+
+function revealPrice(card, price, link) {
+    const priceEl = document.querySelector('.service-price[data-card="' + card + '"]');
+    if (priceEl) priceEl.textContent = price;
+    if (link) link.style.display = 'none';
+}
+
+function setupPricingModal() {
+    const modal = document.getElementById('pricing-modal');
+    const modalClose = document.getElementById('modal-close');
+    const modalServiceName = document.getElementById('modal-service-name');
+    const modalServiceInput = document.getElementById('modal-service-input');
+    const pricingForm = document.getElementById('pricing-form');
+
+    // Reveal prices already unlocked via cookie
+    document.querySelectorAll('.see-pricing-link').forEach(link => {
+        if (getCookie('price_' + link.dataset.card)) {
+            revealPrice(link.dataset.card, link.dataset.price, link);
+        }
+    });
+
+    // Open modal
+    document.querySelectorAll('.see-pricing-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            modal._price = this.dataset.price;
+            modal._card = this.dataset.card;
+            modal._link = this;
+            modalServiceName.textContent = this.dataset.service;
+            modalServiceInput.value = this.dataset.service;
+            document.getElementById('pricing-name').value = '';
+            document.getElementById('pricing-phone').value = '';
+            modal.classList.remove('hidden');
+        });
+    });
+
+    modalClose.addEventListener('click', () => modal.classList.add('hidden'));
+    modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.add('hidden'); });
+
+    if (pricingForm) {
+        pricingForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const submitBtn = pricingForm.querySelector('button[type="submit"]');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+
+            try {
+                await fetch('https://formspree.io/f/mlgzazyb', {
+                    method: 'POST',
+                    body: new FormData(pricingForm),
+                    headers: { 'Accept': 'application/json' }
+                });
+            } catch {}
+
+            setCookie('price_' + modal._card, '1', 30);
+            revealPrice(modal._card, modal._price, modal._link);
+            modal.classList.add('hidden');
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'See pricing';
+        });
+    }
+}
 
 function setupContactForm() {
     const form = document.getElementById('contact-form');
