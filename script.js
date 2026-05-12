@@ -162,9 +162,11 @@ function setupPricingModal() {
     document.querySelectorAll('.see-pricing-link').forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
-            const priceEl = document.querySelector('.service-price[data-card="' + this.dataset.card + '"]');
-            if (priceEl) priceEl.textContent = this.dataset.price;
-            this.style.display = 'none';
+            document.querySelectorAll('.see-pricing-link').forEach(l => {
+                const priceEl = document.querySelector('.service-price[data-card="' + l.dataset.card + '"]');
+                if (priceEl) priceEl.textContent = l.dataset.price;
+                l.style.display = 'none';
+            });
         });
     });
 }
