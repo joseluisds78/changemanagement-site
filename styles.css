@@ -379,7 +379,11 @@ p {
     overflow: hidden;
 }
 
-.service-includes,
+.service-includes {
+    margin-bottom: 1.5rem;
+    min-height: 16rem;
+}
+
 .service-ideal {
     margin-bottom: 1.5rem;
 }
