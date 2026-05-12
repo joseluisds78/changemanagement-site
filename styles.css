@@ -122,6 +122,12 @@ section {
     scroll-margin-top: 40px;
 }
 
+.engagement-duration {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    font-weight: 400;
+}
+
 .navbar .container {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
