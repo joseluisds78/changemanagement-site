@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setupSmoothScroll();
     setupContactForm();
     setupPricingModal();
+    document.getElementById('current-year').textContent = new Date().getFullYear();
 });
 
 function loadBlogPosts() {
